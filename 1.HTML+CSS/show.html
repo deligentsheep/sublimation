@@ -3,67 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="nofollow" />
     <title>show</title>
     <!--外部样式-->
-    <!-- <link rel="icon" href="/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="mystyle.css"> -->
+    <!-- <link rel="icon" href="/favicon.ico"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="mystyle.css"> -->
     
     <!--内部样式-->
     <style>
-        body {
+        body{
             /* CSS背景 */
             /* background-color: antiquewhite; */
-            /* background-image:url('./img.4.jpg'); */
-            /* background-repeat:repeat-x; */
+            /* background-position:right top; */
+            /* background-image:url('./img.4.jpg');
+            background-repeat:repeat-x; */
             /* background-repeat:repeat-y; */
             /* background-repeat:no-repeat; */
-            /* background-position:right top; */
-            /* background:antiquewhite url('./img.4.jpg') no-repeat right top; */
+            /* background:antiquewhite url('./img.4.jpg') no-repeat right top;*/
         }
+        
             /* CSS Text; */
             /* 文本颜色-对齐方式-文本修饰-文本转换-文本缩进 */
             /* h1 {color:red;} */
-            /* h1 {text-align:center;} */
+            h1{
+                width:500px;
+                /* height:42.5px; */
+                text-align:justify;
+                /* text-align-last:justify; */
+            }
+            /* h1::after{
+                display:inline-block;
+                width:100%;
+                content:"";
+            } */
+
+            /* .test{
+                width:500px;
+                text-align:justify;
+            }
+            .test::after{
+                display:inline-block;
+                width:100%;
+                content:"";
+            } */
+
+            /* div{
+                height: 500px;
+                border: solid;
+                align-content:center;
+            } */
             /* .test{text-decoration:overline;} */
-            /* #test{text-decoration:line-through;} */
+            /* .test{text-decoration:line-through;} */
             /* .test{text-decoration:underline;} */
             /* .test{text-transform:uppercase;} */
             /* .test{text-transform:lowercase;} */
             /* .test{text-transform:capitalize;} */
             /* .test{text-indent:50px;} */
-
-            /* CSS 字体 */
             /* .test{
+                letter-spacing:10px;
+                word-spacing:40px;
+            } */
+
+            /* CSS字体*/
+            /* .test{
+                color:blue;
                 font-family:"Times New Roman";
                 font-style:italic;
                 font-size:40px;
-                font-size:0.875em;
+                font-size:0.5em;
             } */
 
-            /* CSS链接+伪类*/
+            /* CSS链接+伪类:特殊状态下的样式*/
             /* a:link {color:#000000;}
             a:visited {color:#00FF00;}
             a:hover {color:#FF00FF;}
             a:active {color:#0000FF;} */
 
+
             /* CSS表格 */
-            /* 基础款-折叠边框-可设置宽度和高度-设置表格文字对齐方式-表格间隙-表格颜色 */
+            /* 基础款-折叠边框-可设置宽度和高度-设置表格文字对齐方式-表格颜色 */
             /* table,th,td{border: 1px solid black;} */
             /* table{border-collapse:collapse;} */
             /* th{height:50px;} */
             /* td{text-align:center;} */
-            /* td{padding:15px;} */
 
             /* CSS盒子模型、边框、轮廓 、填充*/
-            div{ 
-                /* width: 200px; */
-                /* outline:solid rebeccapurple; */
-                /* margin: 25px; */
-                /* border: 5px solid green; */
-                /* padding: 25px; */
-                /* border-style:solid; */
-                /* padding-left:5px; */
-            } 
+            /* div{ 
+                width: 200px;
+                outline:solid rebeccapurple;
+                margin: 25px;
+                border: 5px solid green;
+                padding: 25px;
+                border-style:solid;
+                padding-left:5px;
+                padding-top:10px;
+            }  */
 
             /* CSS Display和Visibility*/
             .test{
@@ -77,18 +111,26 @@
             /* static-fixed-relative-absolute-sticky */
 
             /* CSS布局-Overflow */
-            /* #overflowtest {
+            /* .overflowtest{
                 background: black;
                 color: white;
-                width: 30%;
-                height: 100px;
+                width:300px;
+                height: 200px;
                 overflow:scroll;
                 border: 1px solid #ccc;
+            } */
+            /* html{
+                scroll-behavior:smooth;
             } */
 
             /* CSS float */
             /* img{float:left;} */
             /* h1{clear:both;} */
+
+            /* CSS flex */
+
+            /* CSS gridlayout */
+
 
             /* CSS图像透明度、悬停样式 */
             /* img{
@@ -97,8 +139,6 @@
             img:hover{
                 opacity:1.0;
                 } */
-
-            /* CSS flex */
 
             /* CSS图像拼接 */
             /* #img1{
@@ -111,6 +151,7 @@
                 height:100px;
                 background:url('/img.4.jpg') 220px 0px;
             } */
+
 
             /* CSS属性选择器 */
             /* [type]{
@@ -136,34 +177,41 @@
             } */
 
             /* CSS计数器 */
-            /* body{counter-reset: section;}
+            /* body{counter-reset:s;}
             h1::before{
-                counter-increment: section;
-                content: "Section " counter(section) ": ";
+                counter-increment:s;
+                content: "Section " counter(s) ": ";
             } */
 
-            /* CSS gridlayout */
             
             /* CSS响应式布局 */
-            /* @media screen and (max-width: 600px) {
-                .column{
-                    width: 100%;
+            /* @media screen and (max-width: 2280px) {
+                body{
+                    background-color: aqua;
                 }
             } */
     </style>
 
 </head>
 <body>
-    <p id="test" class="test">css testing <span>sentence</span></p>
-
-    <div id="overflowtest">
+    <p class="test"><span id="testin">css testing sentence</span></p>
+    <!-- <script>
+        // const params=new URLSearchParams(window.location.search);
+        // const name=params.get('name');
+        // document.getElementById("test").innerHTML=name;
+        console.log(window.opener);
+        if(window.opener){ 
+            window.opener.location.href ="https://www.zhanid.com/webmaster/1371.html"
+        }
+    </script> -->
+    <div class="overflowtest">
+        <p>这里的文本内容是可以滚动的</p>
+        <p>这里的文本内容是可以滚动的</p>
+        <p>这里的文本内容是可以滚动的</p>
+        <p>这里的文本内容是可以滚动的</p>
+        <p>这里的文本内容是可以滚动的</p>
         <p>这里的文本内容是可以滚动的</p>
         <p>gggggggggggggggggggggggggggggggggggggggggg</p>
-        <p>这里的文本内容是可以滚动的</p>
-        <p>这里的文本内容是可以滚动的</p>
-        <p>这里的文本内容是可以滚动的</p>
-        <p>这里的文本内容是可以滚动的</p>
-        <p>这里的文本内容是可以滚动的</p>
     </div>
 
     <p id="img1"></p>
@@ -173,22 +221,19 @@
     <p>格式：开始标签+元素内容+结束标签</p>
 
     <h1>常用HTML属性+链接</h1>
-    <p>href(a/link)</p>
-    <p>scr(img)</p>
+    <p>href(a)</p>
+    <p>src(img)</p>
     <p>alt(img)</p>
-    <p><a href="https://www.runoob.com/tags/html-reference.html" rel="noopener">查看完整属性列表——HTML标签参考手册</a></p>
+    <p><a href="https://www.runoob.com/tags/html-reference.html" rel="noopener noreferrer">查看完整属性列表——HTML标签参考手册</a></p>
     <p><a href="https://www.runoob.com/tags/html-reference.html" target="_blank" rel="noopener">查看完整属性列表——HTML标签参考手册</a></p>
     <!--target：定义链接的打开方式
     _blank: 在新窗口或新标签页中打开链接
-    _self: 在当前窗口或标签页中打开链接（默认）
-    _parent: 在父框架中打开链接
-    _top: 在整个窗口中打开链接，取消任何框架-->
+    _self: 在当前窗口或标签页中打开链接（默认）-->
     <!--rel：定义链接与目标页面的关系。
-    nofollow: 表示搜索引擎不应跟踪该链接，常用于外部链接。
-    noopener 和 noreferrer: 防止在新标签中打开链接时的安全问题，尤其是使用 target="_blank" 时-->
+    noopener和noreferrer(由于部分软件兼容问题所以需要加上noreferrer): 防止在新标签中打开链接时的安全问题，尤其是使用 target="_blank" 时-->
     <a href="file.pdf" download="example.pdf">下载文件</a>
     <!-- download里面是文件名 -->
-    <a href="https://www.example.com" title="访问 Example 网站">访问 Example</a>
+    <a href="https://www.example.com" title="访问 Example 网站">访问</a>
     <!-- 鼠标悬停的时候会显示title里面的文字 -->
 
     <h1>HTML标题</h1>
@@ -205,11 +250,11 @@
     <i>斜体文体</i>
 
     <h1>HTML图像</h1>
-    <img src="./img.4.jpg" alt="图片">
+    <img src="./img.4.jpg" alt="图片1">
     <p></p>
     <img src="./img.4.jpg" alt="图片">
 
-    <h1>HTML边框表格表格</h1>
+    <h1>HTML表格</h1>
     <table><!--表格标签，加上border带边框-->
         <thead><!--表格标题-->
           <tr><!--行标签-->
@@ -230,7 +275,7 @@
             <td>23</td>
           </tr>
         </tbody>
-      </table>
+    </table>
 
     <h1>HTML列表</h1>
     <h2>有序</h2>
@@ -240,7 +285,12 @@
     </ol>
     <h2>无序</h2>
     <ul>
-        <li>张三</li>
+        <li>
+            张三
+            <ul>
+                <li>hh</li>
+            </ul>
+        </li>
         <li>李四</li>
     </ul>
     <h2>自定义</h2>
@@ -279,7 +329,9 @@
     <table>
         <tr>
             <td>
-                <b>第一层头部</b>
+                <b>第一层头部
+                    <div>hh</div>
+                </b>
             </td>
         </tr>
         <tr>
@@ -298,23 +350,24 @@
         </tr>
     </table>
 
+
     <h1>HTML表单和输入</h1>
     <form>
         <!-- 文本输入框 -->
-        <label for="name">用户名:</label>
-        <input type="text" id="name" name="name" placeholder="Your name.." required>
-    
+        <label  for="name">用户名:</label>
+        <input type="text" id="name" name="name" placeholder="Your name..">
+        <script>console.log(name)</script>
         <br>
     
         <!-- 密码输入框 -->
         <label for="password">密码:</label>
-        <input type="password" id="password" name="password" placeholder="Your Password.." required>
+        <input type="password" id="password" name="password" placeholder="Your Password..">
     
         <br>
     
         <!-- 单选按钮 -->
         <label>性别:</label>
-        <input type="radio" id="male" name="gender" value="male" checked>
+        <input type="radio" id="male" name="gender" value="male">
         <label for="male">男</label>
         <input type="radio" id="female" name="gender" value="female">
         <label for="female">女</label>
@@ -322,7 +375,7 @@
         <br>
     
         <!-- 复选框 -->
-        <input type="checkbox" id="subscribe" name="subscribe" checked>
+        <input type="checkbox" id="subscribe" name="subscribe">
         <label for="subscribe">订阅推送信息</label>
     
         <br>

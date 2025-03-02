@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>show</title>
+    <!-- JS基本用法 -->
+    <!-- 1.书写在head里面 -->
+    <!-- <script>
+        document.write("<h2>JS基本用法</h2>");
+    </script> -->
+</head>
+<body>
+    <h1>JS基本</h1>
+    <!-- 2.书写在body里面 -->
+    <script>
+    document.write("<h2>JS基本用法</h2>");
+    </script>
+    <!-- 3.书写在外部文件 -->
+    <p id="demo1">demo1</p>
+    <button onclick="test1()">点击我</button>
+    <script src="myScript.js"></script>
+
+
+    <h2>JS输出、调试</h2>
+    <!--警告框-->
+    <!-- <script>window.alert(5+6)</script> -->
+    <!-- <script>window.alert("这是一个警告框")</script> -->
+    <!--操纵HTML元素-->
+    <p id="demo2">demo2</p> 
+    <script>document.getElementById("demo2").innerHTML="修改后的demo2"</script>
+    <!--书写HTML文档-->
+    <script>document.write("输出数字"+1+"<br>"+"换行并且输出文字")</script>
+    <!--写到控制台:调试-->
+    <!-- <script>
+        a = 5;
+        b = 6;
+        c = a + b;
+        console.log(c);//在浏览器开发者进行调试
+        //debugger;//插入debugger之后后面代码都会停止执行
+        document.getElementById("demo2").innerHTML =a;
+    </script> -->
+
+
+    <h2>JS语法：语句、注释、变量、数据类型、对象、访问对象、typeof、null和undefined</h2>
+    <p id="demo3">demo3</p>
+    <script>document.getElementById("demo3").innerHTML=123e5</script>
+    <!-- <script>document.getElementById("demo3").innerHTML="hhhh"</script> -->
+    <!-- <script>document.getElementById("demo3").innerHTML=5*6</script> -->
+    <p id="demo4">demo4</p>
+    <script>
+        var a=6;
+        var b="字符串1"; 
+        document.write("字符串长度："+b.length);
+        var c=["zrc",20];
+        var d={firstname:"John",lastname:"Doe",id: 5566};
+        document.getElementById("demo4").innerHTML=
+            //a;
+            b;
+            //c;
+            //d["firstname"];
+            // typeof 6+"<br>"+
+            // typeof "hhh"+"<br>"+
+            // typeof [1,2,3,4] + "<br>" +
+            // typeof false + "<br>" +
+            // typeof {name:'john', age:34};
+    </script>
+    <!-- Undefined和null -->
+     <script>
+        document.write("<br>");
+        var person;
+        document.write(person + "<br>");
+        var car="Volvo";
+        document.write(car + "<br>");
+        var car=null
+        document.write(car + "<br>");
+    </script>
+
+
+    <h2>JS函数、事件</h2>
+    <p id="biao">函数-表达式</p>
+    <script>
+        var x=function(a,b){return a*b;};
+        //document.getElementById("biao").innerHTML=x(3,4);
+    </script>
+    <button onclick="hanshu1()">函数-语句</button><br><br>
+    <button onclick="hanshu2(2,3)">函数-调参</button><br><br>
+    <button onclick="hanshu3()">函数-返回值</button><br><br>
+    <button onclick="hanshu4()">函数-arguments对象</button><br><br>
+    <button onclick="hanshu5()">函数闭包</button>
+    <button onclick="getElementById('demo5').innerHTML=Date()">事件-修改demo5</button>
+    <p id="demo5">demo5</p>
+    <button onclick="this.innerHTML=Date()">事件-替换自身</button>
+
+
+    <h2>JS作用域、var\let\const、try\catch\finally</h2>
+    <p id="demo6">demo6</p>
+    <!--全局-->
+    <button onclick="getElementById('demo6').innerHTML=x;">全局</button><br><br>
+    <!--局部-->
+    <button onclick="jubu()">局部</button><br><br>
+    <!--块级作用域-->
+    <script>
+        var y=2;
+        {var y=3;}
+        {let y=4;}//不影响块外变量，所以可以利用let处理重新定义相同变量的时候产生的冲突问题
+        try{
+            const y=3.14;//不会影响块外变量
+            y=3.14;//不可以重新定义const变量值，但可以对常量数组或者常量对象进行修改和添加操作
+        }
+        catch(err){document.getElementById("demo6").innerHTML =err;}
+        finally{document.getElementById("demo6").innerHTML ="最终状态";}
+    </script>
+    <button onclick="getElementById('demo6').innerHTML=y">块级</button>
+
+
+    <h2>JS运算符:=/+</h2>
+    <p id="demo7">demo7</p>
+    <button onclick="jiazhi()">运算符</button>
+
+
+    <h2>JS的for/in循环</h2>
+    <p id="demo8">demo8</p>
+    <button onclick="xunhuan()">for/in循环</button>
+
+
+    <h2>JS标签+break/continue</h2>
+    <button onclick="hhh()">点击</button><br>
+    <script>
+        var a=["zrc","20","162","50","gg","ss"];
+        list:{
+            document.write(a[0] + "<br>"); 
+            document.write(a[1] + "<br>"); 
+            document.write(a[2] + "<br>"); 
+            break list;
+            document.write(a[3] + "<br>"); 
+            document.write(a[4] + "<br>"); 
+            document.write(a[5] + "<br>"); 
+        }
+        function hhh(){
+            for(var i=0;i<10;i++){
+                document.write(i);
+                if(i==3){
+                    break;
+                    //continue;
+                }
+            }
+        }
+    </script>
+
+
+    <h2>JS字符串模板</h2>
+    <p id="demo9">demo9</p>
+    <script>
+        var a="";
+        var b=["zrc","20","162"];
+        var c=`<h3>user</h3><ul>`;
+        for(x of b){
+            c+=`<li>${x}</li>`;
+        }
+        c+=`</ul>`;
+        document.getElementById("demo9").innerHTML=c;
+    </script>
+
+
+
+    <h2>JS正则表达式</h2>
+    <!--一种由字符序列形成的搜索模式，可以使用搜索模式来描述要查询的内容-->
+    <p id="demo10">demo10</p>
+    <!-- /runoob/i  是一个正则表达式。
+    runoob  是一个正则表达式主体 (用于检索)。
+    i是一个修饰符 (额外的匹配策略：搜索不区分大小写)。 -->
+    <button onclick="search()">search</button><br><br>
+    <button onclick="replace()">replace</button><br><br>
+    <button onclick="test()">test</button><br><br>
+    <button onclick="exec()">exec</button>
+
+
+    <h2>JS表单、表单验证</h2>
+    <!-- action指定了表单数据提交后要处理的服务器端脚本或程序的URL地址
+    post方法会将表单数据包含在 HTTP 请求的消息体中发送到服务器 
+    如果输入name为空required属性就会阻止表单的提交-->
+    <!-- <form action="demo-form.php" method="post">-->
+    <p id="demo11">demo11</p>
+    <form>
+        用户名: <input type="text" id="name" placeholder="Your name..." required="required">
+        <button onclick="biaodan1()">提交</button><br><br>
+    </form>
+    <!-- email-验证 -->
+     <form>
+        email：<input type="text" id="email" placeholder="Your email...">
+        <button type="button" onclick="biaodan2()">提交</button><br><br>
+     </form>
+
+    
+     <h2>JSON</h2>
+     <!--一种轻量级的数据交换格式-->
+     <p id="demo12">demo12</p>
+     <script>
+        //大括号保存对象，方括号保存数组
+        var a='{"sites":['+
+            '{"name":"zrc","sex":"female"},'+
+            '{"name":"yyz","sex":"male"}]}';
+        var c={"name":"zrc","sex":"female"};
+        var d= '{ "a" : 1 , "b" : window.location.href="https://www.baidu.com" }';
+        //var b=JSON.parse(a);//将数据转换为JS对象
+        //var b= JSON.stringify(c);//将数据转换为JS字符串
+        var b= eval ("(" +a+ ")");
+        document.getElementById("demo12").innerHTML=b.sites[0].name+" "+b.sites[0].sex;
+        //document.getElementById("demo12").innerHTML=b;
+     </script>
+
+
+     <h2>JS void</h2>
+     <!--表达式不返回值-->
+     <p id="demo13">demo13</p>
+     <button onclick="jsvoid()">点击</button><br>
+     <a href="javascript:void(alert('Warning!!!'))">点击</a>
+
+     <h1>接口请求：Ajax</h1>
+     <form id="form1">
+        <p>用户名：<input name="userName" type="text"></p>
+        <p>密 码：<input name="password" type="password"></p>
+        <p><input type="button" value="登录" onclick="login()">&nbsp;<input type="reset" value="重置"></p>
+    </form>
+     <button onclick="ajaxtest()">ajax请求实例</button><br><br>
+     <button onclick="fetchtest()">fetch请求实例</button>
+</body>
+</html>
