@@ -1,6 +1,6 @@
 # 深入的前端学习
 ## 阶段一：学习大纲的制定
-- [Plan](study/.study.md)
+- [Plan](.study/.study.md)
   --
 ---
 ## 阶段二：HTML和CSS的回顾以及深入学习
