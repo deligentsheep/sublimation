@@ -13,7 +13,7 @@
   --
 ---
 ## 阶段三：JS的部分回顾以及深入学习
-- [对应产出的展示网页](https://deligentsheep.github.io/page.github.io-1.HTML-CSS-index.html-/)
+- [对应产出的展示网页](https://deligentsheep.github.io/page2.github.io-index.html-/)
   --
 - [产出的补充知识点](./2.JS/.JS.md)
   --
