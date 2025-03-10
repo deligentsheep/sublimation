@@ -6,16 +6,11 @@
 ## 阶段二：HTML和CSS的回顾以及深入学习
 - [回顾产出的展示网页](https://deligentsheep.github.io/page.github.io-1.HTML-CSS-index.html-/)
   --  
-- [复盘产出的补充笔记](HTML+CSS混合.md)
-  --
-
 - [全部笔记](1.HTML+CSS)
   --
 ---
 ## 阶段三：JS的部分回顾以及深入学习
 - [对应产出的展示网页](https://deligentsheep.github.io/page2.github.io-index.html-/)
-  --
-- [产出的补充知识点](JS.md)
   --
 - [全部笔记](2.JS)
   --
