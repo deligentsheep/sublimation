@@ -317,7 +317,7 @@
 
 - #### BOM
 
-  [../bom&dom.jpg](https://github.com/deligentsheep/sublimation/blob/main/study/bom%26dom.jpg)
+  [BOM1](https://github.com/deligentsheep/sublimation/blob/main/study/bom%26dom.jpg)
 
   详细参考[8]<font color="blue">DOM和BOM是什么，有什么作用?</font>
 
@@ -327,7 +327,7 @@
 
   - 关系：BOM包含了DOM，主要操控一个网页再浏览器中进行的一些操作，比如页面的跳转前进后退等
 
-  [bom](https://github.com/deligentsheep/sublimation/blob/main/study/bom.png)
+  [Bom2](https://github.com/deligentsheep/sublimation/blob/main/study/bom.png)
 ### 接口请求
 
 - [x] Ajax（异步JavaScript和XML）
