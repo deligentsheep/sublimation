@@ -317,7 +317,7 @@
 
 - #### BOM
 
-  ![bom&dom](../bom&dom.jpg)
+  [../bom&dom.jpg](https://github.com/deligentsheep/sublimation/blob/main/study/bom%26dom.jpg)
 
   详细参考[8]<font color="blue">DOM和BOM是什么，有什么作用?</font>
 
