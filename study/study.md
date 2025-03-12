@@ -249,7 +249,7 @@
 
 ==抽象—>形象==：大厦整体
 
-![image-20250307125446613](2.JS/image-20250307125446613.png)
+[DOM](https://github.com/deligentsheep/sublimation/blob/main/study/image-20250307125446613.png)
 
 对大厦的管理（操作DOM—api）
 
@@ -327,8 +327,7 @@
 
   - 关系：BOM包含了DOM，主要操控一个网页再浏览器中进行的一些操作，比如页面的跳转前进后退等
 
-    ![bom](../bom.png)
-
+  [bom](https://github.com/deligentsheep/sublimation/blob/main/study/bom.png)
 ### 接口请求
 
 - [x] Ajax（异步JavaScript和XML）
