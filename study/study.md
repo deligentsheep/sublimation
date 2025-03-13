@@ -1,4 +1,4 @@
-# a1.大方向
+# 1.大方向
 
 ## 前端开发
 
@@ -514,9 +514,181 @@
 
 ## 网络基础——⭐⭐
 
-- [ ] 互联网运行机制
-- [ ] HTTP协议和TCP协议
+- [x] Web机制
+
+  > 互联网和Web的区分：互联网允许我们把电脑连接起来，其中有些特殊的电脑可以发送一些浏览器可以理解的信息，他们被称为Web服务器；总的来说就是互联网是基础设施而Web是一种服务
+
+- 互联网是怎么工作的
+
+  >  一片区域的电脑连接->把不同区域连接起来成为网络->把信息通过这个巨大的网发送出去
+
+  - 概述：互联网是Web的支柱，它是把电脑互相连接起来的一个巨大网络
+  - 有线方式实现电脑的连接：每个电脑需要8个插头，总共需要45根网线，这是非常麻烦的，所以网络上每台电脑需要链接到一个叫做路由器的特殊小电脑，假设我要把信息从A发送到B，==中间人就是由路由器==；这样只需要==把十台电脑都连接到路由器上面就可以实现信息互传==，这时候只需要10根网线。
+  - 不同小网络的连接——电缆：调制解调器可以把网络信息变成电话设施可以处理的信息(反之亦然)
+  - 发送信息：把网络连接到互联网服务提供商(ISP),它管理着和一些特殊路由器，这些特殊路由器是用来连接其他的ISP的。我们要发送信息出去的时候，ISP就会捕获我们的信息，并且发送到相应的网络处
+  - IP(网络协议)地址:网络要在他管理的众多电脑中找到你想要发送信息的那一台电脑就是要靠这个IP地址，这个地址是由四部分被点分隔的数字序列组成，比如：192.0.2.172，在浏览器中搜索不是靠这种IP地址，而是用一个叫做域名的可读名称来代替它，比如google.com就是谷歌IP的域名
+
+- 网页、网站、网络服务器和搜索引擎的区别是什么
+
+  - 网页：一份能够显示在Web浏览器上面的文档，常被叫做page，使用HTML语言编写的；==注意==浏览器不是只能显示HTML文档，比如PDF等，但是这里我们说的是网页，特指HTML文档
+  - 网站：一个由许多网页组合在一起的集合，其中的网页常常以各种方式相互连接，通常称为站点
+  - Web服务器：==一个==在互联网上托管网站的==计算机==，会有一些软件功能，用户尝试加载网页的时候，Web服务器就会将其托管的网页文件发送到用户的浏览器
+  - 搜索引擎：帮助我们查找其他网页的网络服务
+
+- Web是如何工作的：比如我打开一个浏览器输入网址并且按下回车，然后网站出现在我的浏览器中
+
+  - 浏览器从储存资源的Web服务器中请求我想要访问的资源(发送请求)，这些请求以及产生的响应是通过HTTP的技术实现的，不同的请求方式(POST/GET)进行不同的操作
+  - 如果请求成功，Web服务器会将包含所需资源的HTTP响应发送到我们的浏览器
+  - 资源请求完成之后Web浏览器会按照要求解析和渲染他们之后呈现给用户
+
+- 链接很重要，一种连接Web服务器中不同资源的方式
+
+  > 链接的类型
+  >
+  > 内链：网站中的网页之间的链接，没有内部链接就没有网站(除非你的网站只有一页)
+  >
+  > 外链：我的网页到别的网页之间的链接，没有外部链接就没有Web
+  >
+  > 传入链接：别人的网页到我的网页的链接
+
+  > 锚：一种连接你的网页中的不同段落的方式
+
+- 什么是URL
+
+  > 网络中唯一资源的地址，是浏览器用于检索以及发布的资源的关键机制之一
+
+  > 形象化：我们要寄快递，快递地址是URL，我们想要使用的邮政服务是方案(http或者https)，地址所在城市或者城镇就是域名(www.example.com)，快递编码就是端口(80)，我的快递要送到的地方就是路径，有些额外门牌号之的信息就是参数(用&分隔)，我的收件人就是锚点(用#分隔)
+
+  - 权威：在方案后面，用://分隔，包括域名和端口，www.example.com：80
+
+- 域名，从右到左阅读
+
+  > 格式：label2.label1.TLD
+
+  - TLD(顶级域名)
+
+    > 顶级域名可以告诉用户域名所提供的服务的一般目的。最通用的顶级域名`.com`(商业公司)、`.org`(组织协会)、`.net`(网络服务)不需要 Web 服务满足特定的标准，但一些顶级域名则执行更严格的政策（因此它们的目的更加明确）。比如：
+
+    - 地区的顶级域名，如 `.us`、`.fr` 或 `.sh`，可以要求必须提供给定语言的服务或者托管在指定国家——它们应该表示特定语言或国家的资源。
+    - 包含 `.gov` 的顶级域名只能被政府部门使用。
+    - `.edu` 顶级域名只能为教育或学术机构使用。
+
+  - 标签(或者说是组成部分)
+
+  - 咋获得域名呢？
+
+    1. 去域名注册商的网站
+    4. 注册商将会在域名正确注册后通知你，之后所有 DNS 服务器都会收到你的 DNS 信息
+  
+- web服务器
+
+  - 静态服务器：这个服务器会把它托管的文件(成千上万个HTML文档)原封不动的传送到我的浏览器
+  - 动态浏览器：由静态服务器和额外的软件组成——应用服务器和数据库(包含所有网站的内容，匹配成功填充HTML模版就行)，应用服务器会通过HTTP服务器把托管文件传送到我的浏览器之前会对这些托管文件进行更新
+
+  详细参考：<font color="blue">[13]Web机制</font>
+
+- [x] HTTP协议和TCP协议
+
+- 开放系统网络分层
+  - 应用层(+表示层+会话层):HTTP(网络请求协议)/SSH(远程登录协议)/FTP协议(文件传输协议)
+  - 传输层:TCP/UDP协议(用户数据报协议)
+  - 网络层：IP协议
+  - 数据链路层：以太网
+  - 物理层：线路、无线电、光纤
+
+- HTTP协议：一个客户端(用户)和服务端(网站)之间请求和应答的标准
+
+  - 目的：为了提供一种发布和接收HTML页面的方法
+
+  - 具体用法：由客户端发起一个请求，建立一个到服务器指定端口的TCP连接，HTTP服务器则在那个端口监听客户端的请求，一旦受到请求，服务端回想客户端返回一个状态以及返回的内容(比如说请求的文件、错误消息等)
+
+  - 消息结构
+
+    - 客户端请求消息
+
+      > 请求行：格式——方法+URL+HTTP版本——GET /index.html HTTP/1.1
+      >
+      > - 请求方法
+      >
+      >   - GET：向指定资源发出“显示”请求
+      >
+      >     > 应用场景：读取资料
+      >
+      >   - HEAD：向服务器发出指定资源的请求，只不过服务器将不传回资源的文本部分
+      >
+      >     > 好处以及应用场景：在不必传输全部内容的情况下就可以获得其中“关于该资源的原信息(或者说元数据)”
+      >
+      >   - POST：向指定资源提交数据，请求服务器处理(比如说提交表单或者上传文件)。其中数据被包含在请求文本中，这个请求可能会建立新的资源或者修改现有资源，或者二者都有
+      >
+      >   - PUT：向指定资源位置上传其最新内容。
+      >
+      >   - DELETE：请求服务器删除Request-URI所标识的资源
+      >
+      > 请求头：包含了客户端环境信息、请求体的大小（如果有）、客户端支持的压缩类型等
+      >
+      > - 常见请求头`Host`、`User-Agent`、`Accept`、`Accept-Encoding`、`Content-Length`
+      >
+      > 空行
+      >
+      > - 请求头和请求体之间的分隔符，表示请求头的结束。
+      >
+      > 请求体（可选）：
+      >
+      > - 在某些类型的HTTP请求（如 POST 和 PUT）中，请求体包含要发送给服务器的数据。
+
+    - 服务器响应消息
+
+      ![http](../../http.png)
+
+  - 状态码
+
+    - [1xx消息](https://zh.wikipedia.org/wiki/HTTP状态码#1xx消息)——请求已被服务器接收，继续处理
+    - [2xx成功](https://zh.wikipedia.org/wiki/HTTP状态码#2xx成功)——请求已成功被服务器接收、理解、并接受
+    - [3xx重定向](https://zh.wikipedia.org/wiki/HTTP状态码#3xx重定向)——需要后续操作才能完成这一请求
+    - [4xx请求错误](https://zh.wikipedia.org/wiki/HTTP状态码#4xx客户端错误)——请求含有词法错误或者无法被执行
+    - [5xx服务器错误](https://zh.wikipedia.org/wiki/HTTP状态码#5xx服务器错误)——服务器在处理某个正确请求时发生错误
+
+  - 和HTTPS的简单区别：HTTP传输未加密的数据，这意味着浏览器发送的信息可能会被第三方拦截和读取，这一过程并不理想，因此将其扩展为HTTPS，以便为通信再增加一层安全性
+
+    详细区别参考<font color="blue">[14]HTTP/HTTPS</font>
+
+  详细参考<font color="blue">[14]超本文传输协议</font>
+
+- TCP协议：让两个主机相互连接并且传输数据流的重要网络协议
+
+  - 作用:确保数据包的可靠传输和无误
+
+  - 目的：由于不同的主机应用层之间需要经常连接，TCP诞生了——连接方法：一个主机应用层向TCP层发送用于网间传输的、用8字节表示的数据流，然后TCP把它收到的这个数据流分割成适当长度的报文端，之后TCP把结果包传给IP层，由IP层来透过网络将包传给接收主机的TCP层
+
+  - 运作方式:连接建立—数据传送—连接终止
+
+  - 建立通路(三次握手)：
+
+    - 连接过程的中==参数初始化==：服务器端和客户端同时初始化他们之间的连接是有可能的，但是通常是由服务器端打开一个套接字(一种应用程序接口，api)然后监听来自客户端的连接，这被称为被动打开，当服务器端被被动打开以后客户端就能开始建立主动打开
+
+    - 三次==握手协议==的过程
+
+      > 三次握手的目的是为了`防止已失效的连接请求报文段传送到了服务器产生的错误`，也是为了解决`网络中存在延迟的重复分组`
+
+      - 请求打开连接：客户端通过connect函数向服务器端发送一个SYN包，请求主动打开，该包携带客户端为这个连接请求而设定的随机数A`作为消息序列号`
+      - 服务器端处理SYN包：服务器端接收到SYN包之后把该包放入SYN队列并且回送一个SYN/ACK(确认消息=ACK消息)，其中ACK的`确认码`应该为A+1，SYN/ACK他们本身携带的一个随机产生的序号B
+      - 客户端处理回送的SYN包：收到之后发送一个ACK包，该包的序号被设定为A+1,而ACK的确认码则为B+1，然后客户端的connect函数成功返回，当服务端收到这个ACK包的时候会把请求帧从SYN队列里面移除并且放置到ACCEPT队列中，这时候如果accept函数处于==阻塞状态==就可以被唤醒，从ACCEPT中取出ACK包重新建立一个新的用于双向通信的套接字(sockfd)并返回
+
+    - 连接打开之后建立队列：在服务器执行listen之后就在服务器建立起了两个队列——SYN队列用来存放完成二次握手的结果，而ACCEPT队列用来存放完成三次握手的结果
+
+  - 数据传输：在TCP的数据传送状态，很多重要的机制保证了TCP的可靠性和强壮性。
+
+    - 使用序号，对收到的TCP报文段进行排序以及检测重复的数据
+    - 使用校验和检测报文段的错误，即无错传输
+    - 使用确认和计时器来检测和纠正丢包或延时
+    - 流控制:流量控制用来避免主机分组发送得过快而使接收方来不及完全收下，一般由接收方通告给发送方进行调控。
+    - 拥塞控制:拥塞控制是发送方根据网络的承载情况控制分组的发送量，以获取高性能又能避免拥塞崩溃（congestion collapse，网络性能下降几个数量级）。
+    - 丢失包的重传
+
+  详细参考<font color="blue">[15]传输控制协议</font>
+
 - [ ] DNS原理(暂时不学)
+
 - [ ] CDN原理(暂时不学)
 
 ## 浏览器——⭐⭐⭐
@@ -760,9 +932,13 @@
 - [8] [DOM和BOM是什么，有什么作用?](https://zhuanlan.zhihu.com/p/372357616)——知乎
 - [9] [TypeScript](https://zhuanlan.zhihu.com/p/352768834)——知乎(直接去菜鸟找也行)
 - [10] [ECMAScript 6 入门](https://es6.ruanyifeng.com/)——阮一峰ES6
-- [8] [深入理解js事件机制](https://zhuanlan.zhihu.com/p/30988982)——知乎
-- [9] [防抖节流区别](https://www.jasonzk.com/tech/debouncethrottle/#google_vignette)——Jason ZK空间
-- [10] [Vue](https://cn.vuejs.org/guide/introduction.html)——Vue官方文档
-- [11] [VueSFC Playground](https://play.vuejs.org/#eNp9kVFLwzAQx7/KeS9TmBuiT6MOVAbqg4oKvuSltLeuM01CcpmF0u/utaXVhzEISe7/vyS/yzV459ziEAlXmITMl47XylDtrGfIaZtGzdAoA5CnnJ5fDHsATxy9GSOAKhQrmD2S1ha+rNf52Wyw2m6RSUaynB6QgKlyOmWSCCDZXa2bprsF2jZZStSrpXGR4XBZ2Zz0rULxFYqVLKfTOEcOmTXbsljsgzVSRw+lMLOVKzX5V8elNUHhasRVmArnz3OvsY80H/VsR9n3EX0f6k5T+OYpkD+Qwsnj1BfEg735eKFa9pMp5FFL9gnznYLVsWMc0u6jyQX7X15P+1R1PSlN8Rk2NZMJY1EdaP/Jfb5CaebDidL/cK8XN2NzsP0F+HSp8w==)——Vue官方演练场
-- [12] [Vue实战项目：电商管理系统(Element-UI)](https://www.bilibili.com/video/BV1E7411c7M8/?spm_id_from=333.337.top_right_bar_window_custom_collection.content.click&vd_source=3fc05c3b7f095e12a12ea9850e2e0a35)——bilibili
-- [13] [Git](https://liaoxuefeng.com/books/git/introduction/index.html)——廖雪峰git
+- [11] [深入理解js事件机制](https://zhuanlan.zhihu.com/p/30988982)——知乎
+- [12] [防抖节流区别](https://www.jasonzk.com/tech/debouncethrottle/#google_vignette)——Jason ZK空间
+- [13] [Web机制](https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Howto/Web_mechanics)——MDN
+- [14] [HTTP/HTTPS](https://www.runoob.com/http/http-intro.html)——菜鸟教程
+- [14] [超文本传输协议](https://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE)——维基百科
+- [15] [传输控制协议](https://zh.wikipedia.org/wiki/%E4%BC%A0%E8%BE%93%E6%8E%A7%E5%88%B6%E5%8D%8F%E8%AE%AE)——维基百科
+- [16] [Vue](https://cn.vuejs.org/guide/introduction.html)——Vue官方文档
+- [17] [VueSFC Playground](https://play.vuejs.org/#eNp9kVFLwzAQx7/KeS9TmBuiT6MOVAbqg4oKvuSltLeuM01CcpmF0u/utaXVhzEISe7/vyS/yzV459ziEAlXmITMl47XylDtrGfIaZtGzdAoA5CnnJ5fDHsATxy9GSOAKhQrmD2S1ha+rNf52Wyw2m6RSUaynB6QgKlyOmWSCCDZXa2bprsF2jZZStSrpXGR4XBZ2Zz0rULxFYqVLKfTOEcOmTXbsljsgzVSRw+lMLOVKzX5V8elNUHhasRVmArnz3OvsY80H/VsR9n3EX0f6k5T+OYpkD+Qwsnj1BfEg735eKFa9pMp5FFL9gnznYLVsWMc0u6jyQX7X15P+1R1PSlN8Rk2NZMJY1EdaP/Jfb5CaebDidL/cK8XN2NzsP0F+HSp8w==)——Vue官方演练场
+- [18] [Vue实战项目：电商管理系统(Element-UI)](https://www.bilibili.com/video/BV1E7411c7M8/?spm_id_from=333.337.top_right_bar_window_custom_collection.content.click&vd_source=3fc05c3b7f095e12a12ea9850e2e0a35)——bilibili
+- [19] [Git](https://liaoxuefeng.com/books/git/introduction/index.html)——廖雪峰git
