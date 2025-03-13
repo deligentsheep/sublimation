@@ -480,11 +480,11 @@
   >
   > event.preventDefault()：取消事件的默认行为，比如 a标签 默认跳转到一个新网址，如果阻止默认行为，就不会跳转。
   >
-  > event.stopPropagation()：当有[event对象](https://zhida.zhihu.com/search?content_id=4584233&content_type=Article&match_order=1&q=event对象&zhida_source=entity)时，阻止事件冒泡。
+  > event.stopPropagation()：当有event对象时，阻止事件冒泡。
   >
   > window.event.cancelBubble = true：当没有event对象时，阻止事件冒泡（一般用在IE浏览器）。
   >
-  > event.stopImmediatePropagation()：阻止同一个事件的其他监听函数被调用。比如对同一个元素绑定了两个click事件，如果在第一个[click事件](https://zhida.zhihu.com/search?content_id=4584233&content_type=Article&match_order=2&q=click事件&zhida_source=entity)写了event.stopImmediatePropagation()，那么它的其他点击事件就都不会被触发。
+  > event.stopImmediatePropagation()：阻止同一个事件的其他监听函数被调用。比如对同一个元素绑定了两个click事件，如果在第一个click事件写了event.stopImmediatePropagation()，那么它的其他点击事件就都不会被触发。
 
 - [x] 事件委托(事件代理)
 
@@ -638,7 +638,7 @@
 
     - 服务器响应消息
 
-      ![http](../../http.png)
+      [http](http.png)
 
   - 状态码
 
